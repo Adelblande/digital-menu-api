@@ -1,0 +1,14 @@
+version: '3'
+services:
+  postgres:
+    image: 'postgres:latest'
+    restart: always
+    volumes:
+    - './postgres_data:/var/lib/postgresql/data'
+    environment:
+    - POSTGRES_USER=postgres
+    - POSTGRES_PASSWORD=123456
+    - POSTGRES_DB=digital-menu-db
+    ports:
+    - '54320:5432'
+    container_name: 'digital-menu-postgres'
